@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision-Language-Conditioned Keypoint Affordance Representation for Robotic Manipulation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Vision-Language-Conditioned Keypoint Affordance Representation for Robotic Manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous authors
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-eight-ninths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <figure class="image is-pulled-right ml-4" style="max-width: 50%; height: auto; text-align: center;">
+            <img src="./static/images/teaser_compressed.png" alt="Teaser Image">
+            <figcaption class="is-size-6 has-text-centered">
+            Figure 1: We propose a vision-language-conditioned keypoint affordance representation for robotic manipulation. 
+            Building on previous keypoint affordance methods, our method introduces a context-enriched prediction scheme that 
+            enables robots to reason about environmental contexts and current observations, facilitating more effective manipulation
+            tasks.
+            </figcaption>
+          </figure>
+          <p>
+            Open-world object manipulation requires a comprehensive understanding of physical scenes and user commands to solve complex tasks. Recent advances in vision-language models (VLMs) have demonstrated capabilities in open-world manipulation problems. However, how to utilise them for fine-grained scene understanding and perform in-context reasoning for mobile manipulation remains an open challenge. For this purpose, this study explores using pre-trained VLMs to interpret scene context information and generate keypoint-based robot action affordance for mobile manipulation. Our method (KARM) enables a fine-grained semantic understanding of the robotic scene including its elements' spatial relationship in a zero-shot manner. By providing a long-horizon task instruction and the scene context to a pre-trained VLM, in-context and common-sense knowledge are combined as clues for the reasoning of logical task decomposition, serving as a key prerequisite for our keypoint-based affordance prediction pipeline. This pipeline extracts optimal manipulation points for the object of interest from observation images, which are consumed by a motion planner for planning and task execution. We design a set of real-world experiments on various manipulation tasks to showcase the superiority of the mixture of a context-based high-level task planner and a low-level robot controller compared to a non-context alternative.
+          </p>
+        </div>
+      </div>
+    </div>
+ 
+    <!--/ Abstract. -->
+
+    <!-- workfolw. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Approach</h2>
+        <figure class="has-text-centered">
+          <img src="./static/images/overview_compressed.png" class="is-fullwidth" alt="Overview Image">
+        </figure>
+      </div>
+      </div>
+      </p> We develop our method on a pre-trained VLM, and it is for fine-grained robotic scene understangding, its consistent elements detection, and their spatial relation representation, prompted by language tasks. Then, advanced reasoning of the pre-trained VLM performs control logic reasoning behind the language task and further decompose it into a sequence of optimal sub-tasks. For each sub-task and its annotated images, a keypoint affordance representation is proposed to generate candidate keypoints on the grounded objects for robot manipulation (e.g., grasping), followed by selecting and chaining optimal keypoints for the robot path. Finally, the high-level robot path is linked to the low-level controller for task execution. </p>  
+        </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+          <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Experiment</h2>
+
+        <!-- fine-grained scene understanding. -->
+        <h3 class="title is-4">Experimental task </h3>
+        <div class="content has-text-justified" >
+          <figure class="has-text-centered">
+          <img src="./static/images/experimental_task.png" class="is-fullwidth" alt="Experiment Image">
+          </figure>
+          <p>
+           Row (A): we test our model by 9 language tasks including cross-scene and tabletop manipulation tasks. Row (B): grounding text-based objects with the robotic scene with mask, bounding box, text label and probability. The average accuracy of object detection is 67.68%; Row (C): keypoint-based affordance representation where candidate keypoints for grasping (G: red pots) and target (T: green pots) objects are chosen. 
+          </p>
+              
+        <h3 class="title is-3">Success rate for tasks</h3>
+        <div class="content has-text-justified">
+          <figure class="image is-pulled-right ml-4" style="max-width: 60%; height: auto; text-align: center;">
+            <img src="./static/images/accuracy.png" alt="Teaser Image">
+          </figure>
+            <p>We record subtask success over 15 trials and normalise the results to [0, 1]. Left is for cross-scene and tabletop tasks; Right is for only tabletop tasks. For all tasks, our method (KARM: 80%) outperforms MOKA (47.40%) and ReKep (42.22%) on both subtasks and tasks, illustrating consistent improvement through the incorporation of context-aware task reasoning and fine-grained scene understanding. </p>
+           <figure class="image is-pulled-right ml-4" style="max-width: 60%; height: auto; text-align: center;">
+            <img src="./static/images/Table2.png" alt="Teaser Image">
+            </figure>
+            <p>We report the average successful trials per task. Our method demonstrates good performance on handling cross-scene tasks, and the low success rate of the baseline methods (MOKA and ReKep) is due to their focus on handling tabletop tasks rather than cross-scene tasks. From results for only the tabletop tasks (Tasks 3-9), our method (80.00\%) also shows high consistency in the control steps and subtask execution compared with significant performance degradation of the baseline methods (MOKA: 60.93\% \& ReKep: 54.28\%).</p>
+        </div>
+          
+        <h3 class="title is-3">Failure analysis</h3>
+        <div class="content has-text-justified">
+          <figure class="image is-pulled-right ml-4" style="max-width: 60%; height: auto; text-align: center;">
+            <img src="./static/images/Table3.png" alt="Teaser Image">
+          </figure>
+            <p>We analyse failures across 1) reasoning, 2) grounding/perception, 3) execution/control. We found that our method outperforms the baseline methods on these three stages. The results indicate that while the pre-trained model provides reasonable task decomposition, most failures occur during physical execution, highlighting the gap between simulated reasoning and embodied control. </p>
+          
+        </div>
+    </div>
+    <!--/ Animation. -->
+  
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+          <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Experimental Result</h2>
+        <figure class="has-text-centered">
+          <img src="./static/images/experimental_results.png" class="is-fullwidth" alt="Overview Image">
+        </figure>
+         <div class="content has-text-justified">
+           <p>
+            Optimal grasping and target keypoint selection and robot path (cyan lines) (V indicates `viapoint'). <b>Row A</b>: baseline moethod MOKA; <b>Row B</b>: our method; <b>Row C</b>: real-world experiment of our method.</p>
+            </p>  We find that MOKA struggled to predict consistent and logical viapoints and target points (Tasks 3, 4, 5, 8), which led to failures of the manipulation. However, our method performed in-context subtask reasoning, which provided a more logical subtask decomposition for affordance prediction, greatly improving the prediction consistency and robustness.</p>
+         </div>
+        <br/>
+
+        <h4 class="title is-4">Cross-scene manipulation tasks</h4>
+
+        <p>
+          <b>Task 1: </b> "Pick the valve cover from the black table and place it on the table near the engine." </p>
+        <br/>
+        <div class="columns is-centered">
+            <!-- First column -->
+            <div class="column has-text-centered">
+              <img src="./static/images/valvecover.png" style="width: 89%;" alt="Scene Understanding"/>
+            </div>
+
+            <!-- Second column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/pickup_valve_h264.mp4" type="video/mp4">
+              </video>
+            <p>"pick up valve cover"</p>
+            </div>
+
+            <!-- Third column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/move_cross_valve.mp4" type="video/mp4">
+              </video>
+              <p>"robot moves cross robotic scenes"</p>
+            </div>
+        </div>
+
+        <p>
+          <b>Task 2: </b> "Pick the screwdriver from the black table and place it on the table near the engine" </p>
+        <br/>
+        <div class="columns is-centered">
+            <!-- First column -->
+            <div class="column has-text-centered">
+              <img src="./static/images/scrwdriver.png" style="width: 89%;" alt="Scene Understanding"/>
+            </div>
+
+            <!-- Second column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/pickup_screwdriver_h264.mp4" type="video/mp4">
+              </video>
+               <p>"pick up screwdriver"</p>
+            </div>
+
+            <!-- Third column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/move_cross_screwdriver.mp4" type="video/mp4">
+              </video>
+              <p>"robot moves cross robotic scenes"</p>
+            </div>
+        </div>
+        <br/>
+
+
+       <h4 class="title is-4">Tabletop manipulation tasks</h4>
+       <p>
+        <b>Here, we only list success trials.</b>
+        <b>Task 3: </b> "Place the black cube into the white box";
+        <b>Task 6: </b> "Place a screw into the red box";
+        <b>Task 7: </b> "Place green and purple milk packets into the lunch box";
+        <b>Task 8: </b> "Move the spoon from the paper cup and place it into the bowl" </p>
+        <br/>
+        <div class="columns is-centered">
+                <!-- First column -->
+            <div class="column has-text-centered">
+              <img src="./static/images/cube.png" style="width: 88%;" alt="Scene Understanding"/>
+            </div>
+            
+            <div class="column has-text-centered">
+              <img src="./static/images/screw.png" style="width: 88%;" alt="Scene Understanding"/>
+            </div>
+            <div class="column has-text-centered">
+              <img src="./static/images/spoon.png" style="width: 88%;" alt="Scene Understanding"/>
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+               <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 88%;">
+                <source src="./static/videos/pickup_cube_h264.mp4" type="video/mp4">
+              </video>
+              <p>"place the black cube into the white box"</p>
+            </div>
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 88%;">
+                <source src="./static/videos/screw.mp4" type="video/mp4">
+              </video>
+              <p>"place a screw into the red box"</p>
+            </div>
+           
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 88%;">
+                <source src="./static/videos/pickup_spoon_h264.mp4" type="video/mp4">
+              </video>
+              <p>"move the spoon from the paper cup and place it into the bowl"</p>
+            </div>
+        </div>
+     
+        <div class="columns is-centered">
+            <!-- First column -->
+            <div class="column has-text-centered">
+              <img src="./static/images/green_milk.png" style="width: 88%;" alt="Scene Understanding"/>
+            </div>
+
+            <!-- Third column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/green_milk_2_h264.mp4" type="video/mp4">
+              </video>
+              <p>"place gree milk packet into the lunch box"</p>
+            </div>
+            <!-- Third column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/purple_milk.mp4" type="video/mp4">
+              </video>
+              <p>"place purple milk packet into the lunch box"</p>
+            </div>
+        </div>
+        <p> <b>Here, we list both success and failure trials.</b></p>
+        <p>
+          <b>Task 4: </b> "Insert the socket bit into the black hole of the wooden holder" </p>
+        <br/>
+        <div class="columns is-centered">
+            <!-- First column -->
+            <div class="column has-text-centered">
+              <img src="./static/images/bit.png" style="width: 88%;" alt="Scene Understanding"/>
+            </div>
+
+            <!-- Second column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/insert_bit_success_h264.mp4" type="video/mp4">
+              </video>
+              <p>"success trial"</p>
+            </div>
+
+            <!-- Third column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/insert_bit_failure_h264.mp4" type="video/mp4">
+              </video>
+              <p>"failure trial"</p>
+            </div>
+        </div>
+
+        <p>
+          <b>Task 5: </b> "Place the plier into the red container." </p>
+        <br/>
+        <div class="columns is-centered">
+            <!-- First column -->
+            <div class="column has-text-centered">
+              <img src="./static/images/plier.png" style="width: 88%;" alt="Scene Understanding"/>
+            </div>
+           
+            <!-- Second column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/pickup_piler_success_h264.mp4" type="video/mp4">
+              </video>
+              <p>"success trial"</p>
+            </div>
+
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/pickup_piler_failure2_h264.mp4" type="video/mp4">
+              </video>
+              <p>"failure trial"</p>
+            </div>
+        </div>
+        <p>
+          <b>Task 9: </b> "Use the brush to clean the plastic rag." </p>
+        <br/>
+        <div class="columns is-centered">
+            <!-- First column -->
+            <div class="column has-text-centered">
+              <img src="./static/images/brush.png" style="width: 88%;" alt="Scene Understanding"/>
+            </div>
+
+            <!-- Second column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/brush_success_h264.mp4" type="video/mp4">
+              </video>
+              <p>"success trial"</p>
+            </div>
+
+            <!-- Third column -->
+            <div class="column has-text-centered">
+              <video id="matting-video" autoplay controls muted loop playsinline style="width: 100%;">
+                <source src="./static/videos/brush_failure.mp4" type="video/mp4">
+              </video>
+              <p>"failure trial"</p>
+            </div>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{liu2024vision,
+        author    = {Liu, Sichao and C and Wang, Lihui and Gao, Robert X},
+        title     = {Vision AI-based human-robot collaborative assembly driven by autonomous robots},
+        journal={IROS 2025},
+        volume={73},
+        number={1},
+        pages={1--8},
+        year={2024},
+        publisher={Elsevier}
+      }</code></pre>
+  </div>
+</section> -->
+
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+</body>
+</html>

@@ -70,14 +70,14 @@
           <figure class="image is-pulled-right ml-4" style="max-width: 50%; height: auto; text-align: center;">
             <img src="./static/images/teaser_compressed.png" alt="Teaser Image">
             <figcaption class="is-size-6 has-text-centered">
-            Figure 1: We propose a vision-language-conditioned keypoint affordance representation for robotic manipulation. 
+            We propose a vision-language-conditioned keypoint affordance representation for robotic manipulation. 
             Building on previous keypoint affordance methods, our method introduces a context-enriched prediction scheme that 
             enables robots to reason about environmental contexts and current observations, facilitating more effective manipulation
             tasks.
             </figcaption>
           </figure>
           <p>
-            Open-world object manipulation requires a comprehensive understanding of physical scenes and user commands to solve complex tasks. Recent advances in vision-language models (VLMs) have demonstrated capabilities in open-world manipulation problems. However, how to utilise them for fine-grained scene understanding and perform in-context reasoning for mobile manipulation remains an open challenge. For this purpose, this study explores using pre-trained VLMs to interpret scene context information and generate keypoint-based robot action affordance for mobile manipulation. Our method (KARM) enables a fine-grained semantic understanding of the robotic scene including its elements' spatial relationship in a zero-shot manner. By providing a long-horizon task instruction and the scene context to a pre-trained VLM, in-context and common-sense knowledge are combined as clues for the reasoning of logical task decomposition, serving as a key prerequisite for our keypoint-based affordance prediction pipeline. This pipeline extracts optimal manipulation points for the object of interest from observation images, which are consumed by a motion planner for planning and task execution. We design a set of real-world experiments on various manipulation tasks to showcase the superiority of the mixture of a context-based high-level task planner and a low-level robot controller compared to a non-context alternative.
+            Open-world object manipulation necessitates a thorough understanding of physical scenes and user commands to effectively solve complex tasks. Recent advances in vision-language models have demonstrated capabilities in open-world manipulation problems. However, how to utilise them for fine-grained scene understanding and perform in-context reasoning for robotic manipulation remains an open challenge. For this purpose, this study explores the use of pre-trained models to interpret scene context information and generate keypoint-based robot action affordances for mobile manipulation. Our method (KARM) enables a fine-grained semantic understanding of the robotic scene, including the spatial relationships between its elements in a zero-shot manner. By providing a long-horizon task instruction and scene context to a pre-trained VLM, in-context and common-sense knowledge are combined as clues for reasoning in logical task decomposition, serving as a key prerequisite for our keypoint-based affordance prediction pipeline. This pipeline extracts optimal manipulation points for the object of interest from observation images, which are consumed by a motion planner for planning and task execution. We design a set of real-world experiments on various manipulation tasks to showcase the superiority of a mixture of a context-based high-level task planner and a low-level robot controller over a non-contextual alternative on both cross-scene and tabletop manipulation tasks. Our experimental results demonstrate that KARM achieves strong performance with an average success rate of 80% in real-world manipulation tasks, outperforming the state-of-the-art methods by 19.07% in tabletop tasks.
           </p>
         </div>
       </div>
@@ -116,7 +116,7 @@
           <img src="./static/images/experimental_task.png" class="is-fullwidth" alt="Experiment Image">
           </figure>
           <p>
-           Row (A): we test our model by 9 language tasks including cross-scene and tabletop manipulation tasks. Row (B): grounding text-based objects with the robotic scene with mask, bounding box, text label and probability. The average accuracy of object detection is 67.68%; Row (C): keypoint-based affordance representation where candidate keypoints for grasping (G: red pots) and target (T: green pots) objects are chosen. 
+           <b>Row A</b>: we test our model by 9 language tasks including cross-scene and tabletop manipulation tasks. <b>Row B</b>: grounding text-based objects with the robotic scene with mask, bounding box, text label and probability. The average accuracy of object detection is 67.68%; <b>Row C</b>: keypoint-based affordance representation where candidate keypoints for grasping (G: red pots) and target (T: green pots) objects are chosen. 
           </p>
               
         <h3 class="title is-3">Success rate for tasks</h3>
@@ -128,7 +128,7 @@
            <figure class="image is-pulled-right ml-4" style="max-width: 60%; height: auto; text-align: center;">
             <img src="./static/images/Table2.png" alt="Teaser Image">
             </figure>
-            <p>We report the average successful trials per task. Our method demonstrates good performance on handling cross-scene tasks, and the low success rate of the baseline methods (MOKA and ReKep) is due to their focus on handling tabletop tasks rather than cross-scene tasks. From results for only the tabletop tasks (Tasks 3-9), our method (80.00\%) also shows high consistency in the control steps and subtask execution compared with significant performance degradation of the baseline methods (MOKA: 60.93\% \& ReKep: 54.28\%).</p>
+            <p>We report the average successful trials per task. Our method demonstrates good performance on handling cross-scene tasks, and the low success rate of the baseline methods (MOKA and ReKep) is due to their focus on handling tabletop tasks rather than cross-scene tasks. From results for only the tabletop tasks (Tasks 3-9), our method (80.00%) also shows high consistency in the control steps and subtask execution compared with significant performance degradation of the baseline methods (MOKA: 60.93% & ReKep: 54.28%).</p>
         </div>
           
         <h3 class="title is-3">Failure analysis</h3>
@@ -136,7 +136,7 @@
           <figure class="image is-pulled-right ml-4" style="max-width: 60%; height: auto; text-align: center;">
             <img src="./static/images/Table3.png" alt="Teaser Image">
           </figure>
-            <p>We analyse failures across 1) reasoning, 2) grounding/perception, 3) execution/control. We found that our method outperforms the baseline methods on these three stages. The results indicate that while the pre-trained model provides reasonable task decomposition, most failures occur during physical execution, highlighting the gap between simulated reasoning and embodied control. </p>
+            <p>We analyse failures across 1) reasoning, 2) grounding/perception, and 3) execution/control. We found that our method outperforms the baseline methods on these three stages. The results indicate that while the pre-trained model provides reasonable task decomposition, most failures occur during physical execution, highlighting the gap between simulated reasoning and embodied control. </p>
           
         </div>
     </div>
@@ -170,7 +170,7 @@
         <div class="columns is-centered">
             <!-- First column -->
             <div class="column has-text-centered">
-              <img src="./static/images/valvecover.png" style="width: 89%;" alt="Scene Understanding"/>
+              <img src="./static/images/valvecover.png" style="width: 87%;" alt="Scene Understanding"/>
             </div>
 
             <!-- Second column -->
@@ -196,7 +196,7 @@
         <div class="columns is-centered">
             <!-- First column -->
             <div class="column has-text-centered">
-              <img src="./static/images/scrwdriver.png" style="width: 89%;" alt="Scene Understanding"/>
+              <img src="./static/images/screwdriver.png" style="width: 89%;" alt="Scene Understanding"/>
             </div>
 
             <!-- Second column -->
@@ -265,7 +265,7 @@
         <div class="columns is-centered">
             <!-- First column -->
             <div class="column has-text-centered">
-              <img src="./static/images/green_milk.png" style="width: 88%;" alt="Scene Understanding"/>
+              <img src="./static/images/purple_milk.png" style="width: 85%;" alt="Scene Understanding"/>
             </div>
 
             <!-- Third column -->
@@ -290,7 +290,7 @@
         <div class="columns is-centered">
             <!-- First column -->
             <div class="column has-text-centered">
-              <img src="./static/images/bit.png" style="width: 88%;" alt="Scene Understanding"/>
+              <img src="./static/images/bit.png" style="width: 86%;" alt="Scene Understanding"/>
             </div>
 
             <!-- Second column -->
@@ -316,7 +316,7 @@
         <div class="columns is-centered">
             <!-- First column -->
             <div class="column has-text-centered">
-              <img src="./static/images/plier.png" style="width: 88%;" alt="Scene Understanding"/>
+              <img src="./static/images/plier.png" style="width: 86%;" alt="Scene Understanding"/>
             </div>
            
             <!-- Second column -->
@@ -340,7 +340,7 @@
         <div class="columns is-centered">
             <!-- First column -->
             <div class="column has-text-centered">
-              <img src="./static/images/brush.png" style="width: 88%;" alt="Scene Understanding"/>
+              <img src="./static/images/brush.png" style="width: 86%;" alt="Scene Understanding"/>
             </div>
 
             <!-- Second column -->
